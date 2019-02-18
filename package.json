@@ -1,0 +1,25 @@
+{
+    "name": "reactor.js",
+    "version": "0.0.1a",
+    "description": "Lightweight ES6 javascript reactive programming library",
+    "main": "reactor.js",
+    "author": "Dmitry S. Vasilev",
+    "license": "MIT",
+    "keywords": [
+        "tiny",
+        "lightweight",
+        "micro",
+        "reactive",
+        "reactor",
+        "npm",
+        "package"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/caracal7/reactor.js.git"
+    },
+    "homepage": "https://github.com/caracal7/reactor.js",
+    "dependencies": {
+        "es-arguments": "^1.0.2"
+    }
+}
