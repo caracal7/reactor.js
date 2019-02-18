@@ -1,6 +1,6 @@
 {
     "name": "@caracal7/reactor.js",
-    "version": "0.0.1a",
+    "version": "0.0.2-a",
     "description": "Lightweight ES6 javascript reactive programming library",
     "main": "reactor.js",
     "author": "Dmitry S. Vasilev",
