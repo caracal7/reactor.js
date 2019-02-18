@@ -1,5 +1,5 @@
 {
-    "name": "reactor.js",
+    "name": "@caracal7/reactor.js",
     "version": "0.0.1a",
     "description": "Lightweight ES6 javascript reactive programming library",
     "main": "reactor.js",

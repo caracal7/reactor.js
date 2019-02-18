@@ -5,7 +5,7 @@ Lightweight ES6 javascript reactive programming library
 ## Installation
 
 ```
-npm i reactor.js
+npm i @caracal7/reactor.js
 ```
 
 ## Usage
