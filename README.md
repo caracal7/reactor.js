@@ -11,7 +11,7 @@ npm i @caracal7/reactor.js
 ## Usage
 
 ```
-import Reactor from 'reactor.js';
+import Reactor from '@caracal7/reactor.js';
 
 let dataflow = new Reactor();
 
