@@ -1,6 +1,6 @@
 import getArguments from 'es-arguments';
 
-module.exports = function() {
+const Reactive = function() {
     const state = {};
     const functions = {};
     const edges = {};
@@ -78,3 +78,5 @@ module.exports = function() {
         }
     });
 };
+
+export default Reactive;
