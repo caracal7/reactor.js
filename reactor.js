@@ -1,6 +1,6 @@
 /******************************************************************************/
 // The MIT Licence (MIT)
-// Copyright (C) 2019 Dmitry Vasilev
+// Copyright (C) 2018 Dmitry Vasilev
 // This file is part of reactive.js
 /******************************************************************************/
 

@@ -1,11 +1,11 @@
 {
-  "name": "app",
-  "version": "1.0.0",
+  "name": "@caracal7/reactor.js",
+  "version": "0.0.5",
   "description": "",
-  "main": "nodetest.js",
+  "main": "example.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
