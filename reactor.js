@@ -1,9 +1,26 @@
-import getArguments from 'es-arguments';
+/******************************************************************************/
+// The MIT Licence (MIT)
+// Copyright (C) 2019 Dmitry Vasilev
+// This file is part of reactive.js
+/******************************************************************************/
+
+const STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
+const ARGUMENT_NAMES = /([^\s,]+)/g;
+
+const Arguments = func => {
+    const str = func.toString().replace(STRIP_COMMENTS, '');
+    const args = str.split('=>',1)[0].trim();
+    return args.charAt(0) == '(' && args[args.length - 1] == ')'
+        ? args.substr(1, args.length - 2).match(ARGUMENT_NAMES)
+        : [args];
+}
 
 const Reactive = function() {
     const state = {};
     const functions = {};
     const edges = {};
+    const args = {};
+    const scripts = {};
 
     const invoke = property => {
         functions[property]();
@@ -48,29 +65,35 @@ const Reactive = function() {
     };
 
     const setFn = (property, func) => {
-        let dependencies = getArguments(func);
-        dependencies.forEach(input => {
+        scripts[property] = func;
+        args[property] = Arguments(func)
+        args[property].forEach(input => {
             (edges[input] = edges[input] || []).push(property);
         });
         functions[property] = () => {
-            const arg = allDefined(dependencies);
-            if (arg) state[property] = func(...arg);
+            const a = allDefined(args[property]);
+            if (a) state[property] = func(...a);
         };
     }
 
     function Apply(command) {
         if (command === 'debug') {
-            console.log('state', state);
-            console.log('edges', edges);
-            console.log('functions', functions);
+            return {
+                functions,
+                state,
+                edges,
+                args,
+                scripts
+            }
         }
     }
 
     return new Proxy(Apply, {
-        get: (target, name) => name in state ? state[name] : "Key '"+name+"' does't exist",
+        get: (target, name) => name in state ? state[name] : `Key "${name}" does't exist`,
         set: (target, property, value, receiver) => {
             if (typeof value === 'function') setFn(property, value);
             else setValue(property, value);
+            return true;
         },
         apply: (target, thisArg, argumentsList) => target(...argumentsList),
         deleteProperty: function(target, property) {
@@ -79,4 +102,4 @@ const Reactive = function() {
     });
 };
 
-export default Reactive;
+module.exports = Reactive;
