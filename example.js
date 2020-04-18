@@ -1,4 +1,4 @@
-const reactive = require('./reactive.js');
+const reactive = require('./reactor.js');
 
 const nodes = new reactive();
 
