@@ -1,11 +1,15 @@
 {
   "name": "@caracal7/reactor.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
-  "main": "example.js",
+  "main": "reactor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caracal7/reactor.js"
+  },
+  "author": "Dmitry Vasilev",
   "license": "MIT"
 }
